@@ -34,6 +34,6 @@ public class BetController : Controller
     [Authorize(Policy = "Client")]
     public IActionResult Get(int BetId)
     {
-        throw new NotImplementedException();
+        throw new NotImplementedException(); // oi
     }
 }
