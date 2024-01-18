@@ -2,6 +2,9 @@ using TryBets.Bets.DTO;
 using TryBets.Bets.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Text.Json.Serialization;
+using System.Text;
+using Azure;
 
 namespace TryBets.Bets.Repository;
 
@@ -39,11 +42,6 @@ public class BetRepository : IBetRepository
         _context.SaveChanges();
 
         Bet createdBet = _context.Bets.Include(b => b.Team).Include(b => b.Match).Where(b => b.BetId == newBet.BetId).FirstOrDefault()!;
-
-        if (findedMatch.MatchTeamAId == betRequest.TeamId) findedMatch.MatchTeamAValue += betRequest.BetValue;
-        else findedMatch.MatchTeamBValue += betRequest.BetValue;
-        _context.Matches.Update(findedMatch);
-        _context.SaveChanges();
 
         return new BetDTOResponse
         {
