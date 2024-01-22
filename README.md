@@ -13,6 +13,7 @@ A autenticação e autorização foi feita com JWT.<br><br>
 - Entity Framework Core
 - Microsoft SQL Server
 - Microsserviços
+- Docker
 - JWT
 
 ## Diagrama ER
