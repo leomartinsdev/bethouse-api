@@ -21,7 +21,8 @@ A autenticação e autorização foi feita com JWT.<br><br>
 
 
 ## Organização dos Microsserviços:
-![Model databases - Page 1](https://github.com/leomartinsdev/bethouse-api/assets/117598788/9338d15a-2fc0-4297-a122-1e017e3c35b1)
+![Model databases - Page 1](https://github.com/leomartinsdev/bethouse-api/assets/117598788/5e8e02f0-2a4d-4f83-9cd8-8e6fac5d233b)
+
 
 ### BetHouse.Users:
 - Funcionalidades: responsável pelo cadastro e login de usuários.
