@@ -2,30 +2,30 @@ version: '3'
 services:
   db:
     image: mcr.microsoft.com/azure-sql-edge:latest
-    container_name: trybets_db
+    container_name: BetHouse_db
     ports:
         - 1433:1433
     environment:
       - ACCEPT_EULA=Y
-      - MSSQL_SA_PASSWORD=TryBets123456!
+      - MSSQL_SA_PASSWORD=BetHouse123456!
       - MSSQL_PID=Developer
-  trybets.matches:
-    container_name: trybets.matches
-    build: ./src/TryBets.Matches
+  BetHouse.matches:
+    container_name: BetHouse.matches
+    build: ./src/BetHouse.Matches
     ports:
       - 5502:5502
-  trybets.users:
-    container_name: trybets.users
-    build: ./src/TryBets.Users
+  BetHouse.users:
+    container_name: BetHouse.users
+    build: ./src/BetHouse.Users
     ports:
       - 5501:5501
-  trybets.bets:
-    container_name: trybets.bets
-    build: ./src/TryBets.Bets
+  BetHouse.bets:
+    container_name: BetHouse.bets
+    build: ./src/BetHouse.Bets
     ports:
       - 5503:5503
-  trybets.odds:
-    container_name: trybets.odds
-    build: ./src/TryBets.Odds
+  BetHouse.odds:
+    container_name: BetHouse.odds
+    build: ./src/BetHouse.Odds
     ports:
       - 5504:5504

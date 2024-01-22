@@ -23,26 +23,26 @@ A autenticação e autorização foi feita com JWT.<br><br>
 ## Organização dos Microsserviços:
 ![Model databases - Page 1](https://github.com/leomartinsdev/bethouse-api/assets/117598788/9338d15a-2fc0-4297-a122-1e017e3c35b1)
 
-### TryBets.Users:
+### BetHouse.Users:
 - Funcionalidades: responsável pelo cadastro e login de usuários.
-- Fonte: /src/TryBets.Users
+- Fonte: /src/BetHouse.Users
 - Porta: 5501
 - Rotas: POST /user/signup e POST user/login
 
-### TryBets.Matches
+### BetHouse.Matches
 - Funcionalidades: responsável pela visualização de times e partidas.
-- Fonte: /src/TryBets.Matches
+- Fonte: /src/BetHouse.Matches
 - Porta: 5502
 - Rotas: GET /team e GET /match/{finished}
 
-### TryBets.Bets
+### BetHouse.Bets
 - Funcionalidades: responsável pelo cadastro e visualização de apostas.
-- Fonte: /src/TryBets.Bets
+- Fonte: /src/BetHouse.Bets
 - Porta: 5503
 - Rotas: POST /bet e GET /bet/{BetId}
 
-### TryBets.Odds
-- Funcionalidades: responsável pela atualização das odds de cada partida. Ele é utilizado pelo microsserviço TryBets.Bets e será chamado por este toda vez que uma nova aposta for cadastrada.
-- Fonte: /src/TryBets.Odds
+### BetHouse.Odds
+- Funcionalidades: responsável pela atualização das odds de cada partida. Ele é utilizado pelo microsserviço BetHouse.Bets e será chamado por este toda vez que uma nova aposta for cadastrada.
+- Fonte: /src/BetHouse.Odds
 - Porta: 5504
 - Rotas: PATCH /odd/{matchId}/{TeamId}/{BetValue}
